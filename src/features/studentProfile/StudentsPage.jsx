@@ -21,7 +21,7 @@ const StudentsPage = () => {
             </div>
 
             <div>
-                {data.length ? <StudentsTable/> : <h3>No data are there u need to click on add new student button to add details.</h3>}
+                {data.studentArray.length ? <StudentsTable/> : <h3>No data are there u need to click on add new student button to add details.</h3>}
             </div>
         </div>
     )

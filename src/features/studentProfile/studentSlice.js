@@ -2,14 +2,22 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const studentSlice = createSlice({
     name: 'Student', 
-    initialState: [],
+    initialState: {
+        studentArray: [],
+        studentInfo: {
+            name: '',
+            age: '',
+            course: '',
+            batch: ''
+        }
+    },
     reducers: {
         addUser: (state, action) => {
-            state.push(action.payload.state)
+            state.studentArray.push(action.payload.state)
             return state
         },
         editUser: (state, action) => {
-            state[action.payload.index] = action.payload.state;
+            state.studentArray[action.payload.index] = action.payload.state;
             console.log(action.payload)
             return state
         }

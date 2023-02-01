@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './StudentsPage.css';
 import { Link } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -9,13 +9,9 @@ const StudentInfoEditPage = () => {
     const navigate = useNavigate();
     const editData = useLocation();
     const dispatch = useDispatch();
+    const data = useSelector((state) => state.student)
 
-    const [state, setDetails] = useState({
-        name: "",
-        age: "",
-        course: "",
-        batch: ""
-    });
+    const [state, setDetails] = useState(data.studentInfo);
 
     useEffect(() => {
         if(editData.state !== null) {

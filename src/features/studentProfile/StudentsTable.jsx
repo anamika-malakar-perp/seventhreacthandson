@@ -17,7 +17,7 @@ const StudentsTable = () => {
                         <th>Batch</th>
                         <th>Change</th>
                     </tr>
-                    {data.map((x,i) => 
+                    {data.studentArray.map((x,i) => 
                         <tr key={i}>
                             <td>{x.name}</td>
                             <td>{x.age}</td>
